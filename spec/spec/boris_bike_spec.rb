@@ -1,7 +1,5 @@
-require './docking_station'
+require './lib/docking_station'
 
-describe "DockingStation" do 
-    it "returns 'bike'" do
-      expect (docking_station(release_bike)).to eq bike
-    end
+describe DockingStation do 
+    it { is_expected.to respond_to :release_bike }
 end
