@@ -1,9 +1,10 @@
-class DockingStation 
+require_relative 'bike'
+
+class DockingStation
   DEFAULT_CAPACITY = 20
 
-  attr_reader :bike_array
   attr_reader :capacity
-  
+
   def initialize(capacity = DEFAULT_CAPACITY)
     @capacity = capacity
     @bike_array = []
@@ -13,11 +14,11 @@ class DockingStation
   def full?
     if @bike_array.length >= DEFAULT_CAPACITY
       true
-    else 
+    else
       false
     end
   end
-  
+
   def empty?
     if @bike_array.length == 0
       true
@@ -27,7 +28,7 @@ class DockingStation
   end
 
   public
-  def release_bike  
+  def release_bike
     fail ("Error, no bikes in the docking station") if empty?
     @bike_array.pop
   end
