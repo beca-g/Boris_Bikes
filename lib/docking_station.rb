@@ -29,7 +29,7 @@ class DockingStation
 
   public
   def release_bike
-    fail ("Error, no bikes in the docking station") if empty?
+    fail ("Error, no bikes in the docking station") if empty? || (@bike_array[-1]).is_broken?
     @bike_array.pop
   end
 

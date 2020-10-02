@@ -32,7 +32,7 @@ end
     it "won't release broken bikes" do
       bike = Bike.new
       bike.broken
-      subject.dock(bike)
+      subject.dock_bike(bike)
       expect { subject.release_bike }.to raise_error("Error, no bikes in the docking station")
     end
 
