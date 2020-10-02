@@ -37,7 +37,4 @@ end
       expect { subject.dock_bike(bike) }.to raise_error("Error, docking station is full")
     end
   end
-
-
-
 end
