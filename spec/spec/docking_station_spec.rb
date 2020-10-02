@@ -1,12 +1,12 @@
 require './lib/docking_station'
 
-describe DockingStation do 
+describe DockingStation do
   it "responds to the release_bike" do
   is_expected.to respond_to :release_bike
 end
-  it "gets a Bike and expects the Bike to be working" do 
+  it "gets a Bike and expects the Bike to be working" do
     bike = Bike.new
-    expect(bike.working?).to be true 
+    expect(bike.working?).to be true
   end
   it "sets capacity to users input" do
     subject = DockingStation.new(30)
@@ -28,6 +28,14 @@ end
       DockingStation::DEFAULT_CAPACITY.times {subject.release_bike}
       expect { subject.release_bike }.to raise_error("Error, no bikes in the docking station")
     end
+
+    it "won't release broken bikes" do
+      bike = Bike.new
+      bike.broken
+      subject.dock(bike)
+      expect { subject.release_bike }.to raise_error("Error, no bikes in the docking station")
+    end
+
   end
 
   describe "#dock_bike" do
