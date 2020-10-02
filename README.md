@@ -9,7 +9,7 @@ Making Transport for London's dream a reality
 ## Features
 
 
-# Contributors
+## Contributors
  - DayOne - Cameron Logie   
  Helped start the project and built the initial infrastructure.
 
