@@ -3,8 +3,12 @@ class Bike
 	# def initialize
   #   @name = name
 	# end
-	
+
   def working?
     true
   end
+
+	def broken
+	end
+
 end
